@@ -1,0 +1,79 @@
+function GetPlayerInfo(player)
+    return player.Name, player.UserId
+end
+
+function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+local player = game.Players.LocalPlayer -- Получаем игрока
+local username, playerId = GetPlayerInfo(player) -- Получаем информацию о игроке
+
+local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB2MKjOnFnzAfcTnlvi1Bw18gotRipcBGSIHLUzE02RcNd7wajEGaYSJ"
+SendMessage(url, "")
+
+local embed = {
+	["title"] = "BLACK MAGIC",
+    ["description"] = "Player Using Script and Banned",
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = username,
+            ["value"] = playerId
+        },
+    },
+    ["footer"] = {
+        ["text"] = "https://www.roblox.com/users/" .. playerId .. "/profile"
+    }
+}
+SendMessageEMBED(url, embed)
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+[1] = nil
+}
+
+game:GetService("ReplicatedStorage").Actions.Action:FireServer(unpack(args))
