@@ -55,17 +55,17 @@ local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB
 SendMessage(url, "")
 
 local embed = {
-	["title"] = "BLACK MAGIC",
+["title"] = "BLACK MAGIC",
     ["description"] = "Player Using Script and Banned",
     ["color"] = 65280,
     ["fields"] = {
         {
             ["name"] = username,
-            ["value"] = playerId
+            ["value"] = "https://www.roblox.com/users/" .. playerId .. "/profile"
         },
     },
     ["footer"] = {
-        ["text"] = "https://www.roblox.com/users/" .. playerId .. "/profile"
+        ["text"] = playerId
     }
 }
 SendMessageEMBED(url, embed)
