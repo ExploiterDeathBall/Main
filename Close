@@ -55,9 +55,9 @@ local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB
 SendMessage(url, "")
 
 local embed = {
-["title"] = "BLACK MAGIC",
-    ["description"] = "Player Using Script and Banned",
-    ["color"] = 65280,
+["title"] = "Protection of DeathBall",
+    ["description"] = "The player injected the trap and was banned",
+    ["color"] = FF0000,
     ["fields"] = {
         {
             ["name"] = username,
