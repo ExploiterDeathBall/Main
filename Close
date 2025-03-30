@@ -56,7 +56,7 @@ SendMessage(url, "")
 
 local embed = {
 ["title"] = "Protection of DeathBall",
-    ["description"] = "The player injected the trap and was banned",
+    ["description"] = "Exploit Detected",
     ["color"] = 65280,
     ["fields"] = {
         {
