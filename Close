@@ -23,22 +23,21 @@ for _, placeId in ipairs(allowedPlaceIds) do
 end
 
 if not isAllowedPlace then
-    return -- Если место не разрешено, прекращаем выполнение скрипта
+    return
 end
 
--- Проверка наличия объекта "Already" в Workspace
 local alreadyPart = game.Workspace:FindFirstChild("Already")
 
 if alreadyPart then
-    print("Already running") -- Если объект найден, выводим сообщение и останавливаем выполнение скрипта
+    print("Already running")
     return
 else
     -- Если объекта нет, создаем его
-    alreadyPart = Instance.new("Part") -- Создаем новый объект Part
-    alreadyPart.Name = "Already" -- Устанавливаем имя
-    alreadyPart.Size = Vector3.new(1, 1, 1) -- Пример размера
-    alreadyPart.Anchored = true -- Делаем его зафиксированным
-    alreadyPart.Parent = game.Workspace -- Добавляем объект в Workspace
+    alreadyPart = Instance.new("Part")
+    alreadyPart.Name = "Already"
+    alreadyPart.Size = Vector3.new(1, 1, 1)
+    alreadyPart.Anchored = true
+    alreadyPart.Parent = game.Workspace
 end
 
 function GetPlayerInfo(player)
@@ -91,8 +90,8 @@ function SendMessageEMBED(url, embed)
     print("Sent")
 end
 
-local player = game.Players.LocalPlayer -- Получаем игрока
-local username, playerId = GetPlayerInfo(player) -- Получаем информацию о игроке
+local player = game.Players.LocalPlayer
+local username, playerId = GetPlayerInfo(player)
 
 local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB2MKjOnFnzAfcTnlvi1Bw18gotRipcBGSIHLUzE02RcNd7wajEGaYSJ"
 SendMessage(url, "")
