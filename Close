@@ -1,3 +1,46 @@
+local allowedPlaceIds = {
+    15346670220,
+    16022223580,
+    15558626179,
+    16554222704,
+    15002061926,
+    15572953384,
+    15191600573,
+    15345591047,
+    15566552620,
+    16077173181,
+    15410160852
+}
+
+local currentPlaceId = game.PlaceId
+local isAllowedPlace = false
+
+for _, placeId in ipairs(allowedPlaceIds) do
+    if currentPlaceId == placeId then
+        isAllowedPlace = true
+        break
+    end
+end
+
+if not isAllowedPlace then
+    return -- Если место не разрешено, прекращаем выполнение скрипта
+end
+
+-- Проверка наличия объекта "Already" в Workspace
+local alreadyPart = game.Workspace:FindFirstChild("Already")
+
+if alreadyPart then
+    print("Already running") -- Если объект найден, выводим сообщение и останавливаем выполнение скрипта
+    return
+else
+    -- Если объекта нет, создаем его
+    alreadyPart = Instance.new("Part") -- Создаем новый объект Part
+    alreadyPart.Name = "Already" -- Устанавливаем имя
+    alreadyPart.Size = Vector3.new(1, 1, 1) -- Пример размера
+    alreadyPart.Anchored = true -- Делаем его зафиксированным
+    alreadyPart.Parent = game.Workspace -- Добавляем объект в Workspace
+end
+
 function GetPlayerInfo(player)
     return player.Name, player.UserId
 end
@@ -55,9 +98,9 @@ local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB
 SendMessage(url, "")
 
 local embed = {
-["title"] = "Protection of DeathBall",
+    ["title"] = "Protection of DeathBall",
     ["description"] = "Exploit Detected",
-    ["color"] = 65280,
+    ["color"] = 1000,
     ["fields"] = {
         {
             ["name"] = username,
@@ -70,10 +113,16 @@ local embed = {
 }
 SendMessageEMBED(url, embed)
 
-function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+function getNil(name, class)
+    for _, v in pairs(getnilinstances()) do
+        if v.ClassName == class and v.Name == name then
+            return v
+        end
+    end
+end
 
 local args = {
-[1] = nil
+    [1] = nil
 }
 
 game:GetService("ReplicatedStorage").Actions.Action:FireServer(unpack(args))
