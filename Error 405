@@ -1,0 +1,18 @@
+local player = game:GetService("Players").LocalPlayer
+local gui = player.PlayerGui.TeleportingRankInfoGui
+
+local trig = gui
+local ichi = gui.InfoCanvas
+local ich = gui.InfoCanvas.Header
+local icfb = gui.InfoCanvas.Frame.BodyLabel
+local icffh = gui.InfoCanvas.Frame.Frame.Header
+
+ichi.Visible = true
+trig.Enabled = true
+
+ich.Text = "AN ERROR HAS BEEN DETECTED"
+icffh.Text = "ERROR 405"
+icffh.TextColor3 = Color3.new(1, 0, 0)
+
+icfb.Text = "AN ERROR HAS BEEN DETECTED IN DEATHBALL, PLEASE LET US KNOW ABOUT IT ON THE DISCORD SUPPORT SERVER. https://discord.gg/deathballsupport"
+icfb.TextColor3 = Color3.new(0, 1, 1)
