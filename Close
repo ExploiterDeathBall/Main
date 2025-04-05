@@ -93,7 +93,7 @@ end
 local player = game.Players.LocalPlayer
 local username, playerId = GetPlayerInfo(player)
 
-local url = "https://discord.com/api/webhooks/1355434881970340003/4N8BCHOxgIDgjB2MKjOnFnzAfcTnlvi1Bw18gotRipcBGSIHLUzE02RcNd7wajEGaYSJ"
+local url = "https://discord.com/api/webhooks/1358072095166169370/s_KsXL0T7xQwodRhI0tdxrqBVcL1z9b_sO0mRYrtZyQ9H2U40kQWLwnFMIS35maCIhAz"
 SendMessage(url, "")
 
 local embed = {
